@@ -8,25 +8,45 @@ namespace primzahlen_tester
 {
     public class Prim
     {
-     public void mcprim(string s)
+        private string[] ary;
+
+        public List<int> sary;
+
+        List<string> fary;
+
+      
+        public void mcprim(string s)
         {
-            String[] Separator = { "," };
+
             string[] ary = s.Split(",");
-            string[] sary = new string[ary.Length];
+
+            sary = new List<int>();
+
+            fary = new List<string>();
 
 
-            for(int i = 0; i < ary.Length; i++)
+            for (int i = 0; i < ary.Length; i++)
             {
                 try
-                {
-                    sary[i] = ary[i];
+                {  
+                    sary.Add(Convert.ToInt32(ary[i]));
                 }
                 catch
                 {
-
+                   
+                    fary.Add(ary[i].ToString());
                 }
             }
-
+            foreach(int i in sary)
+            {
+                Console.WriteLine(i);
+            }
+            Console.WriteLine("es gibt " + fary.Count + " Fehler,diese werden mit null ersetzt");
+            foreach(string a in fary)
+            { 
+                Console.WriteLine(a);
+            }
+            
         }
     }
 }
