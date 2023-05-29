@@ -8,11 +8,11 @@ namespace primzahlen_tester
 {
     public class Prim
     {
-        private string[] ary;
+        private string[] unsortedary;
 
-        public List<int> sary;
+        public List<int> safelist;
 
-        List<string> fary;
+        List<string> failedlist;
 
       
         public void mcprim(string s)
@@ -20,29 +20,26 @@ namespace primzahlen_tester
 
             string[] ary = s.Split(",");
 
-            sary = new List<int>();
+            safelist = new List<int>();
 
-            fary = new List<string>();
+            failedlist = new List<string>();
 
 
             for (int i = 0; i < ary.Length; i++)
             {
                 try
                 {  
-                    sary.Add(Convert.ToInt32(ary[i]));
+                    safelist.Add(Convert.ToInt32(unsortedary[i]));
                 }
                 catch
                 {
                    
-                    fary.Add(ary[i].ToString());
+                    failedlist.Add(unsortedary[i].ToString());
                 }
             }
-            foreach(int i in sary)
-            {
-                Console.WriteLine(i);
-            }
-            Console.WriteLine("es gibt " + fary.Count + " Fehler,diese werden mit null ersetzt");
-            foreach(string a in fary)
+           
+            Console.WriteLine("es gibt " + failedlist.Count + " Fehler");
+            foreach(string a in failedlist)
             { 
                 Console.WriteLine(a);
             }

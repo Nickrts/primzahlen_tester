@@ -11,7 +11,7 @@ namespace primzahlen_tester
     {
 
       
-        public static bool IsPrim(int number)
+        public bool IsPrim(int number)
         {
             if (number < 2)
                 return false;
@@ -35,25 +35,28 @@ namespace primzahlen_tester
 
 
         }
+         
 
-        public void WPrim(int[] l)
+       
+        public static List<int> dary = new List<int>();
+         public void AddPrim(int[] l)
         {
-            List<int> dary = new List<int>();
+            
+         
             foreach(int i in l)
             {
                 
                 if (IsPrim (i)) 
                 {
                     dary.Add(i);
+                   
+                    
                 }
 
 
             }
 
-            StreamWriter sw = new StreamWriter("text.csv");
-           
-                sw.WriteLine(String.Join(",",dary));
-            
+
         }
     }
 }
