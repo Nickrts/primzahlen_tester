@@ -38,7 +38,7 @@ namespace primzahlen_tester
          
 
        
-        public static List<int> dary = new List<int>();
+        public static List<int> primlist = new List<int>();
          public void AddPrim(int[] l)
         {
             
@@ -48,9 +48,13 @@ namespace primzahlen_tester
                 
                 if (IsPrim (i)) 
                 {
-                    dary.Add(i);
+                    primlist.Add(i);
                    
                     
+                }
+                else
+                {
+                    Console.WriteLine("Das ist keine Primzahl, ind dieser liste befinden sich nicht ausschließlich Primzahlen!");
                 }
 
 

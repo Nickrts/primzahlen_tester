@@ -13,41 +13,53 @@ namespace primzahlen_tester
 
 
 
-           
-            if (args[0] == "-i")
+            for (int i = 0; i < args.Length; i+=2)
             {
-                StreamReader sr;
-                sr = new StreamReader(args[1]);
-                string s = sr.ReadToEnd();
-                sr.Close();
-                Console.WriteLine(s);
+                if (args[i] == "-i")
+                {
+                    StreamReader sr;
+                    sr = new StreamReader(args[i+1]);
+                    string s = sr.ReadToEnd();
+                    sr.Close();
+                    Console.WriteLine(s);
                 
-                Prim m1 = new Prim();
-                m1.mcprim(s);
+                    Prim m1 = new Prim();
+                    m1.mcprim(s);
 
              
-                Iprim m2 = new Iprim();
-                m2.AddPrim(m1.safelist.ToArray());
-            }
+                    Iprim m2 = new Iprim();
+                    m2.AddPrim(m1.safelist.ToArray());
+                }
 
           
-            if (args[2] == "-t")
-            {  
-                StreamWriter sw;
-                sw = new StreamWriter(args[3]);
-                sw.WriteLine(String.Join(",", Iprim.dary));
-                sw.Close();
+                if (args[i] == "-t")
+                {  
+                    StreamReader sr;
+                    sr = new StreamReader(args[i+1]);
+                    string s = sr.ReadToEnd();
+                    sr.Close();
+                    Console.WriteLine(s);
+                
+                    Prim m1 = new Prim();
+                    m1.mcprim(s);
 
-            }
+             
+                    Iprim m2 = new Iprim();
+                    m2.AddPrim(m1.safelist.ToArray());
+                }
             
-            if (args[4] == "-o")
-            {  
-                StreamWriter sw;
-                sw = new StreamWriter(args[3]);
-                sw.WriteLine(String.Join(",", Iprim.dary));
-                sw.Close();
+                if (args[i] == "-o")
+                {  
+                    StreamWriter sw;
+                    sw = new StreamWriter(args[i+1]);
+                    sw.WriteLine(String.Join(",", Iprim.primlist));
+                    sw.Close();
 
-            }
+                }
+
+               
+            }  
+        
         }
     }
 }

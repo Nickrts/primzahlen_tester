@@ -34,7 +34,7 @@ namespace primzahlen_tester
                 catch
                 {
                    
-                    failedlist.Add(unsortedary[i].ToString());
+                //    failedlist.Add(unsortedary[i].ToString()); 
                 }
             }
            
